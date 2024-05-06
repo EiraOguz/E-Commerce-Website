@@ -8,7 +8,7 @@ import "./SecondNavbar.css"
 
 export const SecondNavbar = () => {
   return (
-    <div className='secondnavbar' >
+    <div className='secondpage-navbar' >
         <div className='nav-links' >
         <Link to={"/"} className='secondpage-link'>En Yeni Ürünler</Link>
         <Link to={"/"} className='secondpage-link'>Bilgisayar & Tablet</Link>
