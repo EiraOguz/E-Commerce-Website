@@ -1,51 +1,24 @@
-.firstpage-navbar{
+.f-nav{
     display: flex;
-    padding: 16px;
     user-select: none;
-    line-height: 60px;
     justify-content: space-around;
+    padding: 16px;
     border-bottom: 1px solid rgb(50, 50, 50);
-    gap: 15px;
-    background: rgb(150, 222, 248);
-    background: linear-gradient(90deg, rgba(150, 222, 248,0.39548319327731096) 0%, rgba(150, 222, 248,0.30024509803921573) 100%);
+    gap: 40px;
+    background-color: aliceblue;
 }
-.nav-left{
+.f-nav-left,.f-nav-center,.f-nav-right{
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    gap: 40px;
 }
-.nav-middle{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.nav-right{
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-.nav-left div{
-    display: flex;
-    flex-direction: column;
+.f-nav-left div , .f-nav-right div , .f-nav-center div{
+    display: block;
     align-items: center;
     justify-content: space-around;
     font-size: 25px;
-    cursor: pointer;
-}
-.nav-left input {
-    width: 500px;
-}
-.nav-middle div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    cursor: pointer;
-}
-.nav-right div{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    font-weight: 500;
     cursor: pointer;
 }
 .bi-person-circle , .bi-cart , .bi-search , .logo{
@@ -55,11 +28,27 @@
 .bi-person-circle:hover , .bi-cart:hover , .bi-search:hover , .logo:hover{
     color: black;
 }
-.firstpage-link{
+.f-nav-center .f-nav-search{
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: space-around;
-    width: 40px;
-    height: 40px;
+    justify-content: center;
+}
+.f-nav-search button{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 6px 10px;
+    background: rgb(255, 125, 125);
+    font-size: 20px;
+    border: none;
+}
+.f-nav-search button:hover{
+    background: rgb(255, 100, 100);
+}
+.f-nav-search input{
+    width: 300px;
+    padding: 6px;
+    font-size: 20px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }

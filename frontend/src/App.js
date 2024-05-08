@@ -6,6 +6,8 @@ import './App.css';
 import { Home } from './Pages/Home';
 import { Profile } from './Pages/Profile';
 import { Basket } from './Pages/Basket';
+import { Login } from './Pages/Login';
+import { Signup } from './Pages/Signup';
 
 import { FirstNavbar } from './Componets/Navbar/FirstNavbar/FirstNavbar';
 import { SecondNavbar } from './Componets/Navbar/SecondNavbar/SecondNavbar';
@@ -19,6 +21,8 @@ function App() {
         <SecondNavbar/>
         <Routes>
           <Route path='/' element={<Home/>}/>
+          <Route path='/Login' element={<Login/>}/>
+          <Route path='/Signup' element={<Signup/>}/>
           <Route path='/Profile' element={<Profile/>}/>
           <Route path='/Basket' element={<Basket/>}/>
         </Routes>

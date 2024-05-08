@@ -11,7 +11,7 @@ export const Home = () => {
   return (
     <div className='home'>
           <Carousel className='carousel rounded-bottom'>
-      <Carousel.Item>
+      <Carousel.Item className='d-block w-100 rounded-bottom'>
         <img
           className="d-block w-100 rounded-bottom"
           src={Slider_1}
