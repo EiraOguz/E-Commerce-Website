@@ -21,8 +21,6 @@ export const SecondNavbar = () => {
         <Link to={"/"} className='second-navbar-link'>Foto & Kamera</Link>
         <Link to={"/"} className='second-navbar-link'>Oyun & Oyun Konsolları</Link>
         </div>
-
-        
     </div>
   )
 }

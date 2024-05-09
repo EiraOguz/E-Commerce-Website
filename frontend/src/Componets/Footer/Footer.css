@@ -5,8 +5,8 @@
     align-items: center;
     gap:50px;
     border-top: 1.5px solid rgb(30, 30, 30); ;
-    
     user-select: none;
+    z-index: 2;
 }
 .footer-logo{
     margin-top: 20px;

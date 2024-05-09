@@ -5,6 +5,7 @@
     box-sizing:border-box;
     border-bottom: 1px solid rgb(30, 30, 30);
     background-color: aliceblue;
+    z-index: 2;
 }
 .first-navbar-main{
     width: 100%;
@@ -64,4 +65,53 @@
 }
 .first-navbar-menu a:hover{
     color: black;
+}
+/*Making responsive navbar icon invisible*/
+/* ---> */
+.first-navbar-menu .bi-search{
+    display: none;       
+}
+.first-navbar-menu .bi-three-dots-vertical{
+    display: none;
+}
+/* Media responsive */
+/* ---> */
+@media screen and (max-width: 750px) {
+    .first-navbar-main .first-navbar-search{
+        display: none;
+    }
+    .first-navbar-menu .bi-search{
+        display: block;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .first-navbar-menu .bi-three-dots-vertical{
+        display: block;
+    }
+}
+.first-navbar-search-responsive{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3; /* The larger the number, the more prominent it is. */
+    background-color: hsla(230, 75%, 32%, .1);
+    backdrop-filter: blur(24px);
+    padding: 8rem 1.5rem 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s;
+}
+.first-navbar-search-responsive .bi-x{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+}
+.responsive-search {
+    opacity: 1;
+    pointer-events: initial;
 }
