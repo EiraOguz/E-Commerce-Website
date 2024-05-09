@@ -1,9 +1,9 @@
-.home{
+.f-carousel-slider{
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.carousel{
+.f-carousel{
   width: 90%;
   display: flex;
   justify-content: center;

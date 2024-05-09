@@ -8,19 +8,22 @@ import "./FirstNavbar.css"
 
 export const FirstNavbar = () => {
   return (
-    <div className='f-nav'>
-      <div className='f-nav-left'>
-        <div><Link to={"/"} className="logo">EverLook</Link></div>
-      </div>
-      <div className='f-nav-center'>
-        <div className='f-nav-search'>
-          <input type='text' placeholder="Click for search"/>
+    <div className='first-navbar'>
+
+      <div className='first-navbar-main'>
+
+        <div className="first-navbar-logo"><Link to={"/"}>EverLook</Link></div>
+
+        <form className='first-navbar-search'>
+          <input type='text' placeholder="Search..."/>
           <Link to={"/Search"}><button type="submit"><i className="bi bi-search "></i></button></Link>
+        </form>
+
+        <div className='first-navbar-menu'>
+          <div><Link to={"/Login"}><i className="bi bi-person-square"></i></Link></div>
+          <div><Link to={"/Basket"}><i className="bi bi-bag-fill"></i></Link></div>
         </div>
-      </div>
-      <div className='f-nav-right'>
-        <div><Link to={"/Login"}><i className="bi bi-person-circle "></i></Link></div>
-        <div><Link to={"/Basket"}><i className="bi bi-cart "></i></Link></div>
+
       </div>
     </div>
   )

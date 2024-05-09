@@ -1,54 +1,67 @@
-.f-nav{
-    display: flex;
+.first-navbar{
+    margin: 0px;
+    padding: 0px;
     user-select: none;
-    justify-content: space-around;
-    padding: 16px;
-    border-bottom: 1px solid rgb(50, 50, 50);
-    gap: 40px;
+    box-sizing:border-box;
+    border-bottom: 1px solid rgb(30, 30, 30);
     background-color: aliceblue;
 }
-.f-nav-left,.f-nav-center,.f-nav-right{
+.first-navbar-main{
+    width: 100%;
+    height: 75px;
+    gap: 30px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 40px;
 }
-.f-nav-left div , .f-nav-right div , .f-nav-center div{
-    display: block;
+.first-navbar-logo{
+    display: flex;
     align-items: center;
-    justify-content: space-around;
-    font-size: 25px;
+    justify-content: center;
+    font-size: 35px;
     font-weight: 500;
     cursor: pointer;
 }
-.bi-person-circle , .bi-cart , .bi-search , .logo{
-    color: rgb(50, 50, 50);
+.first-navbar-logo a{
     text-decoration: none;
+    color: rgb(30, 30, 30);
 }
-.bi-person-circle:hover , .bi-cart:hover , .bi-search:hover , .logo:hover{
+.first-navbar-logo a:hover{
     color: black;
 }
-.f-nav-center .f-nav-search{
+.first-navbar-search{
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.f-nav-search button{
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 6px 10px;
-    background: rgb(255, 125, 125);
-    font-size: 20px;
-    border: none;
-}
-.f-nav-search button:hover{
-    background: rgb(255, 100, 100);
-}
-.f-nav-search input{
-    width: 300px;
+.first-navbar-search input{
     padding: 6px;
     font-size: 20px;
     border: none;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
+}
+.first-navbar-search button{
+    padding: 6px 12px;
+    font-size: 20px;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background: rgb(255, 125, 125);
+}
+.first-navbar-search button:hover{
+    background: rgb(255, 100, 100);
+}
+.first-navbar-menu{
+    display: flex;
+    gap: 30px;
+}
+
+.first-navbar-menu a{
+    font-size: 25px;
+    color: rgb(50, 50, 50);
+    text-decoration: none;
+}
+.first-navbar-menu a:hover{
+    color: black;
 }
