@@ -1,15 +1,38 @@
-.f-carousel-slider{
+.home{
+  z-index: 2;
+}
+.carousel{
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  
 }
-.f-carousel{
-  width: 90%;
+.carousel-slider{
+  width: 95%;
   display: flex;
   justify-content: center;
   align-items: center;
   border-bottom: 1px solid rgb(50, 50, 50);
   border-left: 1px solid rgb(50, 50, 50);
   border-right: 1px solid rgb(50, 50, 50);
+}
+.carousel-item img {
+}
+
+.small-image {
+  display: block;
+}
+
+.large-image {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .small-image {
+    display: none;
+  }
+
+  .large-image {
+    display: block;
+  }
 }

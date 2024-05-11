@@ -1,0 +1,150 @@
+
+.basket {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.basket-items-container {
+  border: 1px solid #ddd;
+  width: 70%;
+  border-radius: 10px;
+}
+
+.basket-items-container h2 {
+  color: rgb(30, 30, 30);
+  font-size: 20px;
+  margin: 10px;
+}
+
+.basket-items-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.basket-product-item {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.basket-product-image {
+  width: 90px;
+  height: 90px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.basket-product-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  color: rgb(30, 30, 30);
+}
+.basket-product-info i{
+  color: rgb(255, 125, 125);
+  font-size: 18px;
+  transition: color 0.3s ease; 
+}
+.basket-product-info i:hover {
+  color: rgb(255, 75, 75);
+}
+.basket-product-info .basket-product-font{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.basket-quantity-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+.basket-quantity-items i {
+  color: #021373;
+  margin: 0 8px;
+  font-size: 22px;
+  transition: color 0.3s ease; 
+}
+.basket-quantity-items i:hover {
+  color: #0460D9;
+}
+
+.basket-quantity-items div {
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  display: flex;
+}
+
+.basket-summary-container {
+  min-width: 200px;
+  width: 20%;
+  transition: all 0.3s ease;
+}
+
+.basket-summary {
+  padding: 20px;
+  border: 1px solid #28a745;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.basket-summary h2 {
+  display: block;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.basket-total-price {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.basket-checkout-btn {
+  display: block;
+  width: 100px;
+  height: 45px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 5px;
+  background-color: #28a745;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.basket-checkout-btn:hover {
+  background-color: #218838;
+}
+@media screen and (max-width: 768px) {
+  .basket {
+    flex-direction: column;
+  }
+
+  .basket-items-container {
+    width: 100%;
+  }
+
+  .basket-summary-container {
+    width: 100%;
+    margin-top: 20px; /* Arada bir boşluk bırakmak için */
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  /* Buraya ek düzenlemeler yapılabilir */
+}

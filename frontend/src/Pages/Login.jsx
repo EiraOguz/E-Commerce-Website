@@ -8,19 +8,19 @@ export const Login = () => {
       <div className='login-options'>
       <form>
         <h1>Login</h1>
-        <div className='l-input-box'>
+        <div className='login-input-box'>
           <input type='email' placeholder='Email'  required/>
         </div>
-        <div className='l-input-box'>
+        <div className='login-input-box'>
           <input type='password' placeholder='Pasword' required/>
         </div>
-        <div className='Remember-forgot'>
+        <div className='login-remember-forgot'>
           <label><input type='checkbox'/>Remember me</label>
         </div>
-        <button type='submit' className='btn'>Login</button>
-        <div className='register-link'>
+        <button type='submit' className='login-button'>Login</button>
+        <div className='login-register-link'>
           <p>Don't have an account?</p>
-          <Link to="/Signup"><button type='submit' className='btn-register'>Register</button></Link>
+          <Link to="/Signup"><button type='submit' className='login-register-button'>Register</button></Link>
         </div>
       </form>
       </div>
