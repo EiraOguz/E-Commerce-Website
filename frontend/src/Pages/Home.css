@@ -16,10 +16,8 @@
   border-left: 1px solid rgb(50, 50, 50);
   border-right: 1px solid rgb(50, 50, 50);
 }
-.carousel-item img {
-}
 
-.small-image {
+/* .small-image {
   display: block;
 }
 
@@ -35,4 +33,4 @@
   .large-image {
     display: block;
   }
-}
+} */

@@ -27,7 +27,6 @@
   display: flex;
   align-items: center;
   border-top: 1px solid #ddd;
-  transition: all 0.3s ease;
 }
 
 .basket-product-image {
@@ -88,7 +87,6 @@
 .basket-summary-container {
   min-width: 200px;
   width: 20%;
-  transition: all 0.3s ease;
 }
 
 .basket-summary {
@@ -141,10 +139,6 @@
 
   .basket-summary-container {
     width: 100%;
-    margin-top: 20px; /* Arada bir boşluk bırakmak için */
+    margin-top: 20px;
   }
-}
-
-@media screen and (max-width: 1150px) {
-  /* Buraya ek düzenlemeler yapılabilir */
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 
-import Slider_1 from "../Componets/Assets/Slider/Slider_1.webp";
-import Slider_2 from "../Componets/Assets/Slider/Slider_2.webp";
+import Banner_1 from "../Componets/Assets/Banners/Banner_1.webp";
+import Banner_2 from "../Componets/Assets/Banners/Banner_2.webp";
+import Banner_3 from "../Componets/Assets/Banners/Banner_3.webp";
+import Banner_4 from "../Componets/Assets/Banners/Banner_4.webp";
 
 import 'bootstrap/dist/css/bootstrap.css';
 import Carousel from 'react-bootstrap/Carousel';
@@ -16,52 +18,32 @@ export const Home = () => {
       <Carousel className='carousel-slider rounded-bottom'>
        <Carousel.Item >
           <img
-           className="large-image w-100 rounded-bottom "
-            src={Slider_1}
-            alt="First slide"
-         />
-          <img
-           className="small-image  w-100 rounded-bottom"
-            src={Slider_2}
+           className="w-100 rounded-bottom "
+            src={Banner_1}
             alt="First slide"
          />
        </Carousel.Item>
-       <Carousel.Item>
-         <img
-            className="large-image w-100 rounded-bottom"
-            src={Slider_1}
-            alt="Second slide"
-          />
+       <Carousel.Item >
           <img
-           className="small-image  w-100 rounded-bottom"
-            src={Slider_2}
+           className="w-100 rounded-bottom "
+            src={Banner_2}
             alt="First slide"
          />
-        </Carousel.Item>
-       <Carousel.Item>
-         <img
-            className="large-image w-100 rounded-bottom"
-            src={Slider_1}
-           alt="Third slide"
-         />
+       </Carousel.Item>
+       <Carousel.Item >
           <img
-           className="small-image  w-100 rounded-bottom"
-            src={Slider_2}
+           className="w-100 rounded-bottom "
+            src={Banner_3}
             alt="First slide"
          />
-        </Carousel.Item>
-        <Carousel.Item >
-         <img
-            className="large-image w-100 rounded-bottom"
-            src={Slider_1}
-            alt="Fourth slide"
-         />
+       </Carousel.Item>
+       <Carousel.Item >
           <img
-           className="small-image  w-100 rounded-bottom"
-            src={Slider_2}
+           className="w-100 rounded-bottom "
+            src={Banner_4}
             alt="First slide"
          />
-        </Carousel.Item>
+       </Carousel.Item>
       </Carousel>
       </div>
     </div>

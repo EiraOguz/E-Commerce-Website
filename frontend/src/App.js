@@ -13,6 +13,9 @@ import FirstNavbar from './Componets/Navbar/FirstNavbar/FirstNavbar';
 import { SecondNavbar } from './Componets/Navbar/SecondNavbar/SecondNavbar';
 import { Footer } from './Componets/Footer/Footer';
 
+import {ProductList} from './Componets/ProductList/ProductList';
+import {ProductDetail} from './Componets/ProductDetail/ProductDetail';
+
 function App() {
   return (
     <div className="App">
@@ -25,7 +28,8 @@ function App() {
           <Route path='/Login' element={<Login/>}/>
           <Route path='/Signup' element={<Signup/>}/>
           <Route path='/Profile' element={<Profile/>}/>
-          <Route path='/Search' element={<Home/>}/>
+          <Route path='/ProductList' element={<ProductList/>}/>
+          <Route path='/ProductDetail' element={<ProductDetail/>}/>
           <Route path='/Basket' element={<Basket/>}/>
         </Routes>
         <Footer/>

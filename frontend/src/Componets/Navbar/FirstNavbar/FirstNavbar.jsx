@@ -21,7 +21,7 @@ const FirstNavbar = () => {
         </div>
         <form className='first-navbar-search'>
           <input type='text' placeholder="Search..." />
-          <Link to={"/Search"}>
+          <Link to={"/ProductList"}>
             <button type="submit">
               <i className="bi bi-search"></i>
             </button>
@@ -37,7 +37,7 @@ const FirstNavbar = () => {
       <div className={`first-navbar-search-responsive ${isSearchOpen ? 'responsive-search' : ''}`}>
         <form className='first-navbar-search'>
           <input type='text' placeholder="Search..." />
-          <Link to={"/Search"}>
+          <Link to={"/ProductList"}>
             <button type="submit">
               <i className="bi bi-search "></i>
             </button>
