@@ -10,6 +10,7 @@ export const SecondNavbar = () => {
   return (
     <div className='second-navbar'>
       <div className='second-navbar-links'>
+
         <Link to={"/NewProducts"} className='second-navbar-link'>En Yeni Ürünler</Link>
         <Link to={"/ComputerTablet"} className='second-navbar-link'>Bilgisayar & Tablet</Link>
         <Link to={"/PrintersProjectors"} className='second-navbar-link'>Yazıcılar & Projeksiyon</Link>
@@ -20,6 +21,7 @@ export const SecondNavbar = () => {
         <Link to={"/HomeAppliances"} className='second-navbar-link'>Elektrikli Ev Aletleri</Link>
         <Link to={"/PhotoCamera"} className='second-navbar-link'>Foto & Kamera</Link>
         <Link to={"/GamesConsoles"} className='second-navbar-link'>Oyun & Oyun Konsolları</Link>
+        
       </div>
     </div>
   );

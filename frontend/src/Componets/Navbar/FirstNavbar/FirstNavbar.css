@@ -69,28 +69,11 @@
 .first-navbar-menu a:hover{
     color: black;
 }
-/*Making responsive navbar icon invisible*/
-/* ---> */
 .first-navbar-menu .bi-search{
     display: none;       
 }
 .first-navbar-menu .bi-three-dots-vertical{
     display: none;
-}
-/* Media responsive */
-/* ---> */
-@media screen and (max-width: 768px) {
-    .first-navbar-main .first-navbar-search{
-        display: none;
-    }
-    .first-navbar-menu .bi-search{
-        display: block;
-    }
-}
-@media screen and (max-width: 1150px) {
-    .first-navbar-menu .bi-three-dots-vertical{
-        display: block;
-    }
 }
 .first-navbar-search-responsive{
     position: fixed;
@@ -98,7 +81,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 3; /* The larger the number, the more prominent it is. */
+    z-index: 3;
     background-color: hsla(230, 75%, 32%, .1);
     backdrop-filter: blur(24px);
     padding: 8rem 1.5rem 0;
@@ -117,4 +100,17 @@
 .responsive-search {
     opacity: 1;
     pointer-events: initial;
+}
+@media screen and (max-width: 768px) {
+    .first-navbar-main .first-navbar-search{
+        display: none;
+    }
+    .first-navbar-menu .bi-search{
+        display: block;
+    }
+}
+@media screen and (max-width: 1150px) {
+    .first-navbar-menu .bi-three-dots-vertical{
+        display: block;
+    }
 }

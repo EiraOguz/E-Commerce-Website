@@ -1,4 +1,3 @@
-import {Helmet} from 'react-helmet';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.css';
@@ -11,10 +10,12 @@ import { Signup } from './Pages/Signup';
 
 import FirstNavbar from './Componets/Navbar/FirstNavbar/FirstNavbar';
 import { SecondNavbar } from './Componets/Navbar/SecondNavbar/SecondNavbar';
-import { Footer } from './Componets/Footer/Footer';
 
 import {ProductList} from './Componets/ProductList/ProductList';
 import {ProductDetail} from './Componets/ProductDetail/ProductDetail';
+
+import { Footer } from './Componets/Footer/Footer';
+
 
 function App() {
   return (
@@ -35,10 +36,6 @@ function App() {
         <Footer/>
         </BrowserRouter>
       </div>
-      <Helmet>
-        <style>{'body { background-color: white; }'}</style>
-      </Helmet>
-
     </div>
   );
 }

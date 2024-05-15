@@ -1,5 +1,7 @@
 import React from 'react';
+
 import "./Basket.css";
+
 import Nike_1 from "../Componets/Assets/Product-Pictures/Nike-1.jpg";
 
 export const Basket = () => {

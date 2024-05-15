@@ -1,13 +1,13 @@
 .home{
   z-index: 2;
 }
-.carousel{
+.home-carousel{
   display: flex;
   justify-content: center;
   align-items: center;
   
 }
-.carousel-slider{
+.home-carousel-slider{
   width: 95%;
   display: flex;
   justify-content: center;

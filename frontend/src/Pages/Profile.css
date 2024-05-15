@@ -1,4 +1,3 @@
-/* Profile Container */
 .profile-container {
   display: flex;
   justify-content: center;
@@ -8,13 +7,12 @@
   padding: 20px;
 }
 
-/* Profile Information */
 .profile-info {
   display: flex;
-  flex-direction: column;
   text-align: center;
-  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
   gap: 20px;
 }
 
@@ -26,50 +24,41 @@
   margin-bottom: 20px;
 }
 
-.user-details {
+.profile-user-details {
   display: flex;
   flex-direction: column;
 }
 
-.user-details h2 {
+.profile-user-details h2 {
   font-size: 24px;
   margin: 0;
 }
 
-.user-details p {
+.profile-user-details p {
   margin: 0;
   color: #666;
 }
 
-/* Ordered Items */
-.ordered-items {
+.profile-ordered-items {
   flex-grow: 1;
 }
 
-.ordered-items h2 {
+.profile-ordered-items h2 {
   font-size: 24px;
   margin-bottom: 20px;
 }
 
-.ordered-items ul {
+.profile-ordered-items ul {
   list-style-type: none;
   padding: 0;
 }
 
-.ordered-items li {
+.profile-ordered-items li {
   margin-bottom: 10px;
   font-size: 18px;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
-
-  .profile-info {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
   .profile-image {
     margin-bottom: 20px;
   }
