@@ -10,6 +10,7 @@ export const Login = () => {
     email: "",
     password: ""
   });
+  
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -35,15 +36,15 @@ export const Login = () => {
       <div className='login-options'>
         <form onSubmit={handleSubmit}>
           <h1>Login</h1>
-          <p className="error-message">{error}</p>
+          <p className="login-error-message">{error}</p>
           <div className='login-input-box'>
-            <input type='email' placeholder='Email' name='email' value={formData.email} onChange={handleChange} required />
+            <input type='text' placeholder='Email' name='email' value={formData.email} onChange={handleChange} required />
           </div>
           <div className='login-input-box'>
             <input type='password' placeholder='Password' name='password' value={formData.password} onChange={handleChange} required />
           </div>
           <div className='login-remember-forgot'>
-            <label><input type='checkbox' />Remember me</label>
+            <input type='checkbox' /><label>Remember me</label>
           </div>
           <button type='submit' className='login-button'>Login</button>
           <div className='login-register-link'>

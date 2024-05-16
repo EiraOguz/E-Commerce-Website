@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
+import Profile_Logo from '../../Assets/Profile-Logo/Profile-Logo.webp';
+
 import './FirstNavbar.css';
 
 const FirstNavbar = () => {
   // Responsive search logo options :
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const toggleSearch = () => {
-    setIsSearchOpen(!isSearchOpen);
+    setIsSearchOpen(!isSearchOpen); 
   };
   // Other : 
 
@@ -37,6 +39,7 @@ const FirstNavbar = () => {
         <div className='first-navbar-menu'>
           <div onClick={toggleSearch}><Link><i className="bi bi-search"></i></Link></div>
           <div><Link to={"/Login"}><i className="bi bi-person-square"></i></Link></div>
+          <div><Link to={"/Profile"}><img src={Profile_Logo} alt='Profile İmage'/></Link></div>
           <div><Link to={"/Basket"}><i className="bi bi-bag-fill"></i></Link></div>
           <div><Link><i className="bi bi-three-dots-vertical"></i></Link></div>
         </div>

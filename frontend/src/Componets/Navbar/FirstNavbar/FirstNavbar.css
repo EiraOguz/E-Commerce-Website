@@ -3,13 +3,13 @@
     padding: 0px;
     user-select: none;
     box-sizing:border-box;
-    border-bottom: 1px solid #ddd;
+    /* border-bottom: 1px solid #ddd; */
     background-color: aliceblue;
     z-index: 2;
 }
 .first-navbar-main{
     width: 100%;
-    height: 75px;
+    height: 90px;
     gap: 30px;
     display: flex;
     align-items: center;
@@ -69,8 +69,20 @@
 .first-navbar-menu a:hover{
     color: black;
 }
+.first-navbar-menu img{
+
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+/*  This code was written to fill the gap automatically left by other Bootstrap icons.
+    While not the perfect solution, any solution is better than no solution => */
+    margin-bottom:4.3px;
+}
 .first-navbar-menu .bi-search{
-    display: none;       
+    display: none;
 }
 .first-navbar-menu .bi-three-dots-vertical{
     display: none;
