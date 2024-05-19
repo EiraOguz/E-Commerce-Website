@@ -20,16 +20,16 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:4000/login', formData)
-      .then(res => {
-        if (res.data.success) {
-          navigate('/');
-        } else {
-          setError(res.data.message);
-        }
-      })
-      .catch(err => console.error(err));
-  };
+    axios.post('http://localhost:4000/auth/login', formData)
+        .then(res => {
+            if (res.data.loginsuccess) {
+                navigate('/');
+            } else {
+                setError(res.data.message);
+            }
+        })
+        .catch(err => console.error(err));
+};
 
   return (
     <div className='login'>
