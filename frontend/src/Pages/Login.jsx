@@ -23,7 +23,8 @@ export const Login = () => {
     axios.post('http://localhost:4000/auth/login', formData)
         .then(res => {
             if (res.data.loginsuccess) {
-                navigate('/');
+                sessionStorage.setItem('token', res.data.token);
+                window.location.reload(navigate('/'));
             } else {
                 setError(res.data.message);
             }

@@ -23,7 +23,8 @@ export const Signup = () => {
         axios.post('http://localhost:4000/auth/signup', formData)
             .then(res => {
                 if (res.data.signupsuccess) {
-                    navigate('/Login');
+                    sessionStorage.setItem('token', res.data.token);
+                    window.location.reload(navigate('/'));
                 } else {
                     setError(res.data.message);
                 }

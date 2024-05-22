@@ -11,8 +11,9 @@ const login = async (req, res) => {
         const checkpassword = await bcrypt.compare(password, user.Password);
         if (!checkpassword) return res.json({ loginsuccess: false, message: "Password incorrect" });
 
-        const token = jwt.sign({ id: user.id, email: user.Email }, process.env.JWT_SECRET);
+        const token = jwt.sign({ ID: user.ID, Email: user.Email, Name : user.Name, Role : user.Role}, process.env.JWT_SECRET);
         res.json({ loginsuccess: true, token: token });
+
     } catch (error) {
         res.status(500).json({ message: "Internal server error" });
     }
@@ -21,17 +22,45 @@ const login = async (req, res) => {
 const signup = async (req, res) => {
     const { name, email, password, role } = req.body;
     try {
-        const checkemail = await userService.getUserByEmail(email);
-        if (checkemail) {
-            return res.json({signupsuccess:false, message: "This email already has an account" });
+        if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+            return res.json({signupsuccess:false, message: "Invalid email format" });
         }
+
+        if (!password || password.length < 8) {
+            return res.json({signupsuccess: false, message: "Password must be at least 8 characters long" });
+        }
+
+        if (!/[a-z]/.test(password) || !/[A-Z]/.test(password)) {
+            return res.json({signupsuccess: false, message: "Password must contain both uppercase and lowercase letters" });
+        }
+        
+        const checkemail = await userService.getUserByEmail(email);
+        if (checkemail) return res.json({signupsuccess:false, message: "This email already has an account" });
+
         const hashedPassword = await bcrypt.hash(password, 10);
         await userService.createUser(name, email, hashedPassword, role);
-        res.json({signupsuccess: true});
+
+        const user = await userService.getUserByEmail(email);
+        const token = jwt.sign({ ID: user.ID, Email: user.Email, Name : user.Name, Role : user.Role}, process.env.JWT_SECRET);
+        res.json({signupsuccess: true, token: token});
+
     } catch (error) {
         res.status(500).json({ message: "Internal server error" });
     }
 };
 
+const profile = async (req, res) => {
+    try {
+        const token = req.body.token;
+        if (!token) return res.json({ message: "Token is missing" });
+        
+        const decodedtoken = jwt.verify(token, process.env.JWT_SECRET);
+        
+        res.json({ userData: decodedtoken });
+    } catch (error) {
+        res.status(401).json({ message: "Unauthorized" });
+    }
+};
 
-export default { login, signup };
+
+export default { login, signup, profile };

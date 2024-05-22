@@ -1,17 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import {useNavigate} from 'react-router-dom';
+import axios from 'axios';
+import { logout } from '../Context/UserAuth.js';
 
-import "./Profile.css";
+import './Profile.css';
 
 import Profile_Logo from "../Componets/Assets/Profile-Logo/Profile-Logo.webp";
 
-export const Profile = () => {
+const Profile = () => {
+  const [token, setToken] = useState();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const storedToken = sessionStorage.getItem('token');
+      sendToken(storedToken);
+  }, []);
+
+  const sendToken = (token) => {
+    axios.post('http://localhost:4000/auth/profile', { token: token })
+      .then(res => {
+        setToken(res.data.userData);
+      })
+      .catch(err => console.error(err));
+  };
+
+  const handleLogout = () => {
+    logout();
+    window.location.reload(navigate('/'));
+  };
+
   return (
     <div className='profile-container'>
       <div className='profile-info'>
         <img src={Profile_Logo} alt="Profile" className="profile-image" />
         <div className="profile-user-details">
-          <h2>Oğuzcan Hızlı</h2>
-          <p>eiraoguz@gmail.com</p>
+          {token && (
+            <>
+              <h2>{token.Name}</h2>
+              <p>{token.Email}</p>
+            </>
+          )}
+          <button onClick={handleLogout} className='profilelogoutbutton'>Çıkış Yap</button>
         </div>
       </div>
       <div className='profile-ordered-items'>
@@ -25,3 +54,5 @@ export const Profile = () => {
     </div>
   )
 }
+
+export default Profile;

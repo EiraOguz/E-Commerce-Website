@@ -113,6 +113,13 @@
     opacity: 1;
     pointer-events: initial;
 }
+.hide-login-icon {
+    display: none;
+  }
+  
+  .hide-profile-image {
+    display: none;
+  }
 @media screen and (max-width: 768px) {
     .first-navbar-main .first-navbar-search{
         display: none;

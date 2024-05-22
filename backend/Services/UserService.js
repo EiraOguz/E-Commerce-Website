@@ -20,4 +20,5 @@ const createUser = (name, email, password, role) => {
     });
 };
 
+
 export default { getUserByEmail, createUser };
