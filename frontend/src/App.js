@@ -30,8 +30,8 @@ function App() {
           <Route path='/Login' element={<PublicRoute><Login /></PublicRoute>}/>
           <Route path='/Signup' element={<PublicRoute><Signup /></PublicRoute>}/>
           <Route path='/Profile' element={<PrivateRoute><Profile /></PrivateRoute>}/>
-          <Route path='/ProductList' element={<ProductList />}/>
-          <Route path='/ProductDetail' element={<ProductDetail />}/>
+          <Route path="/ProductList" element={<ProductList />} />
+          <Route path="/ProductDetail/:id" element={<ProductDetail />} />
           <Route path='/Basket' element={<Basket />}/>
         </Routes>
         <Footer/>

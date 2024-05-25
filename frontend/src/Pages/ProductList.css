@@ -1,3 +1,145 @@
-.product-list{
-    
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  padding:40px;
+}
+
+.filter-section {
+  flex: 1;
+  margin-right: 40px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  background-color: aliceblue;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.product-section {
+  flex: 3;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.product-card a {
+  text-decoration: none;
+}
+
+.product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.product-name {
+  margin: 10px 0;
+  color: #333;
+}
+
+.product-price {
+  color: rgb(255, 90, 90);
+  font-weight: 500;
+}
+
+.product-filter {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-option {
+  margin-bottom: 20px;
+}
+
+.filter-option label {
+  display: block;
+  margin:10px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+.filter-option select,
+.filter-option input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+.filter-option select:hover,
+.filter-option input:hover {
+  border-color: #888;
+}
+
+.filter-option span {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.product-list-button  {
+  width: 100%;
+  height: 45px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  border: 1px solid rgb(50, 50, 50);
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 40px;
+  background-color: rgb(255, 115, 115);
+  color: #333;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.product-list-button:hover {
+  background-color: rgb(255, 90, 90);
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+.product-list-button:active {
+  transform: scale(0.98);
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 1150px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .filter-section {
+    flex: 1 0 100%;
+    margin-bottom: 20px;
+    position:static;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { isLoggedIn } from '../../../Context/UserAuth.js';
 
 import 'bootstrap/dist/css/bootstrap.css';
@@ -10,10 +10,17 @@ import Profile_Logo from '../../Assets/Profile-Logo/Profile-Logo.webp';
 import './FirstNavbar.css';
 
 const FirstNavbar = () => {
-    // Responsive search logo options :
+    const [searchTerm, setSearchTerm] = useState('');
     const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const navigate = useNavigate();
+
     const toggleSearch = () => {
         setIsSearchOpen(!isSearchOpen); 
+    };
+
+    const handleSearchSubmit = (e) => {
+        e.preventDefault();
+        window.location.reload(navigate(`/ProductList?search=${searchTerm}`));
     };
     
     return (
@@ -24,13 +31,16 @@ const FirstNavbar = () => {
                     <Link to={"/"}>EverLook</Link>
                 </div>
 
-                <form className='first-navbar-search'>
-                    <input type='text' placeholder="Search..." />
-                    <Link to={"/ProductList"}>
-                        <button type="submit">
-                            <i className="bi bi-search"></i>
-                        </button>
-                    </Link>
+                <form className='first-navbar-search' onSubmit={handleSearchSubmit}>
+                    <input
+                        type='text'
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button type="submit">
+                        <i className="bi bi-search"></i>
+                    </button>
                 </form>
 
                 <div className='first-navbar-menu'>
@@ -44,13 +54,16 @@ const FirstNavbar = () => {
             </div>
             
             <div className={`first-navbar-search-responsive ${isSearchOpen ? 'responsive-search' : ''}`}>
-                <form className='first-navbar-search'>
-                    <input type='text' placeholder="Search..." />
-                    <Link to={"/ProductList"}>
-                        <button type="submit">
-                            <i className="bi bi-search "></i>
-                        </button>
-                    </Link>
+                <form className='first-navbar-search' onSubmit={handleSearchSubmit}>
+                    <input
+                        type='text'
+                        placeholder="Search..."
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                    <button type="submit">
+                        <i className="bi bi-search "></i>
+                    </button>
                 </form>
                 <div onClick={toggleSearch}><i className='bi bi-x'></i></div>
             </div>

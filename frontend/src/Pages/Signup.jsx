@@ -20,7 +20,7 @@ export const Signup = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:4000/auth/signup', formData)
+        axios.post('http://localhost:4000/routes/signup', formData)
             .then(res => {
                 if (res.data.signupsuccess) {
                     sessionStorage.setItem('token', res.data.token);

@@ -17,7 +17,7 @@ const Profile = () => {
   }, []);
 
   const sendToken = (token) => {
-    axios.post('http://localhost:4000/auth/profile', { token: token })
+    axios.post('http://localhost:4000/routes/profile', { token: token })
       .then(res => {
         setToken(res.data.userData);
       })

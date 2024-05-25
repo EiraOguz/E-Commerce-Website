@@ -100,12 +100,13 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity .4s;
+    display: none;
 }
 .first-navbar-search-responsive .bi-x{
     position: absolute;
     top: 2rem;
     right: 2rem;
-    font-size: 1.5rem;
+    font-size: 2rem;
     color: var(--title-color);
     cursor: pointer;
 }
@@ -125,6 +126,9 @@
         display: none;
     }
     .first-navbar-menu .bi-search{
+        display: block;
+    }
+    .first-navbar-search-responsive{
         display: block;
     }
 }
