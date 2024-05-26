@@ -59,5 +59,45 @@ const getFeatures = () => {
     });
 };
 
+const getFeatureDetail = () => {
+    return new Promise((resolve, reject) => {
+        const sql = "SELECT * FROM featuredetail";
+        db.query(sql, (err, result) => {
+            if (err) reject(err);
+            resolve(result);
+        });
+    });
+};
 
-export default { getUserByEmail, createUser, getProducts, getCategories, getBrands, getFeatures };
+const getBasket = () => {
+    return new Promise((resolve, reject) => {
+        const sql = "SELECT * FROM basket";
+        db.query(sql, (err, result) => {
+            if (err) reject(err);
+            resolve(result);
+        });
+    });
+};
+
+const getOrders = () => {
+    return new Promise((resolve, reject) => {
+      const sql = "SELECT * FROM orders";
+      db.query(sql, (err, result) => {
+        if (err) reject(err);
+        resolve(result);
+      });
+    });
+  };
+  
+  const getProductById = (productID) => {
+    return new Promise((resolve, reject) => {
+      const sql = "SELECT * FROM product WHERE ProductID = ?";
+      db.query(sql, [productID], (err, result) => {
+        if (err) reject(err);
+        resolve(result[0]);
+      });
+    });
+  };
+
+
+export default { getUserByEmail, createUser, getProducts, getCategories, getBrands, getFeatures, getFeatureDetail, getBasket, getProductById, getOrders };

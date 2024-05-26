@@ -133,4 +133,42 @@ const features = async (req, res) => {
     }
 };
 
-export default { login, signup, profile, products, categories, brands, features };
+const featuredetail = async (req, res) => {
+    try {
+        const result = await Service.getFeatureDetail();
+        res.json(result);
+    }
+    catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+const basket = async (req, res) => {
+    try {
+        const result = await Service.getBasket();
+        res.json(result);
+    } catch (error) {
+        res.status(500).json({ message: "Internal server error" });
+    }
+};
+
+const orders = async (req, res) => {
+  try {
+    const result = await Service.getOrders();
+    res.json(result);
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+const product = async (req, res) => {
+  const { productID } = req.body;
+  try {
+    const product = await Service.getProductById(productID);
+    res.json(product);
+  } catch (error) {
+    res.status(500).json({ message: "Internal server error" });
+  }
+};
+
+export default { login, signup, profile, products, categories, brands, features, featuredetail, basket, product, orders };

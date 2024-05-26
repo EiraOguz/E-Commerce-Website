@@ -18,6 +18,13 @@ router.get('/brands', Controller.brands);
 
 router.get('/features', Controller.features);
 
+router.get('/featuredetail', Controller.featuredetail);
+
+router.get('/basket', Controller.basket);
+
+router.post('/product', Controller.product);
+
+router.get('/orders', Controller.orders);
 
 
 export default router;
