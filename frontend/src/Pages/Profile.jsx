@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { logout } from '../Context/UserAuth.js';
@@ -15,28 +15,29 @@ const Profile = () => {
   const [products, setProducts] = useState([]);
   const navigate = useNavigate();
 
+  const sendToken = useCallback((token) => {
+    axios.post('http://localhost:4000/routes/tokenmiddleware', { token: token })
+      .then(res => {
+        setToken(res.data.userData);
+        fetchUserOrders(res.data.userData.ID);
+      })
+      .catch(err => console.error(err));
+  }, []);
+
   useEffect(() => {
     const storedToken = sessionStorage.getItem('token');
     sendToken(storedToken);
-  }, []);
+  }, [sendToken]);
 
-  const sendToken = (token) => {
-    axios.post('http://localhost:4000/routes/profile', { token: token })
-      .then(res => {
-        setToken(res.data.userData);
-      })
-      .catch(err => console.error(err));
-  };
-
-  useEffect(() => {
-    axios.get('http://localhost:4000/routes/orders')
+  const fetchUserOrders = (userID) => {
+    axios.get(`http://localhost:4000/routes/orders?userID=${userID}`)
       .then(res => {
         setOrders(res.data);
       })
       .catch(error => {
-        console.error('Error fetching orders:', error);
+        console.error('Error fetching user orders:', error);
       });
-  }, []);
+  };
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -61,6 +62,7 @@ const Profile = () => {
     logout();
     window.location.reload(navigate('/'));
   };
+  
   return (
     <div className='profile-container'>
       <div className='profile-info'>

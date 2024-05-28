@@ -3,7 +3,6 @@
     padding: 0px;
     user-select: none;
     box-sizing:border-box;
-    /* border-bottom: 1px solid #ddd; */
     background-color: aliceblue;
     z-index: 2;
 }

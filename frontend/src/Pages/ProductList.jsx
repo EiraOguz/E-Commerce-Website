@@ -32,7 +32,7 @@ export const ProductList = () => {
   }, [selectedCategory, selectedBrand, selectedFeature, searchTerm, navigate]);
 
   const fetchProducts = useCallback(() => {
-    let query = 'http://localhost:4000/routes/products';
+    let query = 'http://localhost:4000/routes/searchfilter';
     const params = [];
 
     if (selectedCategory) params.push(`category=${selectedCategory}`);
